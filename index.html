@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aulas de música online na Academia Musical Asafe. Aprenda a tocar instrumentos como violão, guitarra, piano e canto com os melhores professores!">
+    <title>Aula de Música Online - Inscreva-se Agora!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- <li><a href="#home">Home</a></li> -->
+            <!-- <li><a href="#sobre">Sobre</a></li> -->
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#precos">Preços</a></li>
+            <li><a href="#inscrever">Inscreva-se</a></li>
+        </ul>
+    </nav>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Academia Musical Asafe (AMA)</h1>
+        <p>Transforme seu talento musical e aprenda com os melhores professores, do conforto de sua casa!</p>
+        <a href="#inscrever" class="cta-btn">Inscreva-se Agora</a>
+    </header>
+    <section class="about">
+        <h2>O que você vai aprender?</h2>
+        <p>Com a nossa aula de música, você aprenderá a dominar seu instrumento preferido. Seja violão, guitarra, piano ou canto, oferecemos aulas práticas e teóricas para todos os níveis. Nossos professores são especialistas em suas áreas e possuem experiência no ensino de música para iniciantes e músicos avançados.</p>
+        <img src="shared/images/lp/instruments.jpg" alt="Aula de Música">
+    </section>
+    <section class="video-container">
+        <h2>Assista aos nossos momentos musicais</h2>
+        <p>Confira dois vídeos curtos da nossa orquestra, apresentando uma parte da nossa cantata. Não perca a emoção da música que tocou o coração da nossa comunidade!</p>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wyp961Adbhk?si=ajMFQ1y8dneJVMIH&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vrOCg74wMrA?si=G6oF-5TPlB_3x527&amp;controls=0&amp;start=20" title="Orquestra da Igreja - Cantata" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="courses" id="cursos">
+        <div class="course-card">
+            <img src="shared/images/lp/violao.jpg" alt="Curso de Violão">
+            <h3>Curso de Violão</h3>
+            <p>Aprenda as técnicas do violão de forma fácil e rápida com aulas dinâmicas e práticas.</p>
+            <a href="#" class="cta-btn">Saiba Mais</a>
+        </div>
+        <div class="course-card">
+            <img src="shared/images/lp/violino.jpg" alt="Curso de Guitarra">
+            <h3>Curso de Violino</h3>
+            <p>Domine o violino e aprenda a tocar suas músicas favoritas com os melhores professores.</p>
+            <a href="#" class="cta-btn">Saiba Mais</a>
+        </div>
+        <div class="course-card">
+            <img src="shared/images/lp/teclado.jpg" alt="Curso de Piano">
+            <h3>Curso de Piano</h3>
+            <p>Aprenda a tocar piano do básico ao avançado, desenvolvendo sua musicalidade e técnica.</p>
+            <a href="#" class="cta-btn">Saiba Mais</a>
+        </div>
+    </section>
+    <div class="more-courses">
+        <p>Temos outros cursos incríveis!</p>
+        <a href="#cursos" class="cta-btn">Veja todos os cursos</a>
+    </div>
+    <section class="pricing-info" id="precos">
+        <h3>Informações sobre Preços e Datas</h3>
+        <div class="info">
+            <strong>Preço:</strong> A partir de R$50,00 por mês
+        </div>
+        <div class="info">
+            <strong>Início das aulas:</strong> Todo início de mês
+        </div>
+        <div class="info">
+            <strong>Datas disponíveis:</strong> Segunda a Sexta-feira, das 19h às 21h
+        </div>
+        <div class="info discount">
+            <strong>Promoção para Grupos:</strong> Inscreva-se com amigos ou familiares e ganhe descontos!
+            <ul>
+                <li>2 pessoas: 10% de desconto</li>
+                <li>3 ou mais: 15% de desconto</li>
+            </ul>
+        </div>
+        <div class="info">
+            <strong>Local da Aula:</strong> 
+            <p>As aulas são realizadas na nossa sede em São Paulo (SP), ou você pode escolher a opção de aula online, diretamente do conforto da sua casa.</p>
+        </div>
+    </section>
+    <section id="inscrever" class="form-container">
+        <h4>Inscreva-se Hoje!</h4>
+        <form action="/submit" method="POST">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu E-mail" required>
+            <button type="submit">Quero Aprender Música</button>
+        </form>
+    </section>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=5511975155138" class="whats-btn" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a>
+    <footer>
+        <p>&copy; 2025 Academia Musical Asafe. Todos os direitos reservados.</p>
+        <p>Contate-nos: contato@aulademusica.com.br</p>
+    </footer>
+</body>
+</html>

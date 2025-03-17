@@ -1,0 +1,397 @@
+   /* Reset básico */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    overflow-x: hidden;
+}
+/* Navbar fixa */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a237e;
+    color: white;
+    padding: 15px 0;
+    z-index: 1000; /* Fixa a navbar no topo */
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap; /* Adicionando flex-wrap para quebrar os itens quando necessário */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 150px 20px;
+    text-align: center;
+    position: relative;
+}
+header h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px) {
+    header {
+        padding: 80px 20px;
+    }
+    header h1 {
+        font-size: 3rem; /* Reduzindo o tamanho da fonte */
+    }
+    header p {
+        font-size: 1.2rem; /* Font menor em telas pequenas */
+    }
+}
+.cta-btn {
+    background-color: #ffcc00;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+.cta-btn:hover {
+    background-color: #e0a700;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+/* Ajustar os botões em telas menores */
+@media (max-width: 768px) {
+    .cta-btn {
+        padding: 12px 30px; /* Menor padding nos botões */
+        font-size: 1rem; /* Fonte menor */
+    }
+
+    .form-container input, .form-container button {
+        width: 90%; /* Input e botão mais largos em dispositivos móveis */
+    }
+
+    .form-container h4 {
+        font-size: 2rem; /* Fonte do título menor */
+    }
+}
+/* Seção sobre a aula */
+.about {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
+    z-index: 1;
+    position: relative;
+}
+.about h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.about img {
+    max-width: 100%;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2.2rem;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+}
+ /* Estilo do container de vídeos */
+.video-container {
+    text-align: center;
+    padding: 80px 20px;
+    background: #1a237e; /* Cor de fundo */
+    color: white;
+    animation: fadeIn 3s ease-out;
+}
+.video-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.video-container p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Estilo dos iframes (vídeos) */
+.video-container iframe {
+    width: 35%;
+    height: 315px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+    .video-container iframe {
+        width: 90%; /* Tornar os vídeos mais largos em telas pequenas */
+        height: 200px; /* Ajustar a altura para não ocupar muito espaço */
+    }
+}
+
+/* Cards de cursos */
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+}
+.course-card {
+    background: #fff;
+    width: 320px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+.course-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.course-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.course-card p {
+    font-size: 1.1rem;
+    color: #777;
+    margin: 20px 0;
+}
+.course-card .cta-btn {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+/* Ajustes para os cards de cursos */
+@media (max-width: 768px) {
+    .courses {
+        flex-direction: column; /* Empilhar os cards verticalmente em telas pequenas */
+        gap: 20px; /* Menor espaço entre os cards */
+    }
+    .course-card {
+        width: 90%; /* Cards mais estreitos em telas menores */
+        padding: 20px; /* Menos padding */
+    }
+}
+/* Mais cursos */
+.more-courses {
+    text-align: center;
+    margin-bottom: 15px; 
+    /* margin-top: 5px; */
+}
+.more-courses p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px; /* Espaço entre o texto e o botão */
+}
+.more-courses .cta-btn {
+    display: inline-block; /* Faz com que o botão fique abaixo do texto */
+    background-color: #1a237e;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Espaçamento acima do botão */
+}
+/* .more-courses .cta-btn:hover {
+    background-color: #ffcc00;
+} */
+/* Seção de informações sobre preços e datas */
+.pricing-info {
+    background-color: #ffcc00;
+    padding: 60px 20px;
+    text-align: center;
+}
+.pricing-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.pricing-info .info {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+.info.discount ul{
+    list-style-type: none;            
+}
+/* Formulário de inscrição */
+.form-container {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1a237e;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #ffcc00;
+}
+.form-container h4 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.form-container input, .form-container button {
+    padding: 15px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 0;
+}
+.form-container input {
+    background-color: #fff;
+    color: #333;
+}
+.form-container button {
+    background-color: #ffcc00;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.form-container button:hover {
+    background-color: #e0a700;
+    transform: scale(1.05);
+}
+/* Estilo para a seção de Localização */
+.location {
+    padding: 80px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    margin-top: 40px;
+}
+.location h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+.location p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .location h2 {
+        font-size: 2rem;
+    }
+    .location p {
+        font-size: 1rem;
+    }
+    .map-container iframe {
+        width: 100%; /* A largura do mapa fica 100% em dispositivos móveis */
+    }
+}
+.map-container {
+    margin-top: 30px;
+}
+.map-container iframe {
+    border-radius: 10px;
+}
+.whats-btn {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index:1000;
+}
+.whatsapp-btn:hover {
+    transform: scale(1.1); 
+}
+@media (max-width: 768px) {
+    .whats-btn {
+        width: 50px; /* Tornar o botão menor */
+        height: 50px;
+        font-size: 24px; /* Fonte menor */
+        bottom: 30px; /* Ajustar a posição */
+        right: 30px;
+    }
+}  
+/* Rodapé */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+footer p {
+    font-size: 1rem;
+}
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.9rem;
+    }
+}
