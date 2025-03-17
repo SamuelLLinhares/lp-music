@@ -381,17 +381,75 @@ header p {
     }
 }  
 /* Rodapé */
+/* Rodapé */
 footer {
     background: #333;
     color: #fff;
-    padding: 30px 20px;
+    padding: 50px 20px;
     text-align: center;
+    font-size: 1rem;
+    border-top: 5px solid #ffcc00; /* Linha para destacar o rodapé */
+    position: relative;
 }
+
 footer p {
     font-size: 1rem;
+    margin: 10px 0;
+    color: #ccc; /* Cor mais suave para o texto */
 }
+
+/* Links úteis */
+footer .footer-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer .footer-links a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #ffcc00; /* Destacar links úteis ao passar o mouse */
+    transform: translateY(-3px); /* Leve animação de movimento */
+}
+
+/* Ícones sociais */
+footer .social-icons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    font-size: 2rem; /* Aumentar tamanho dos ícones */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #ffcc00; /* Destacar ícones sociais ao passar o mouse */
+    transform: scale(1.2); /* Aumentar o ícone ao passar o mouse */
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
+    footer .social-icons a {
+        font-size: 1.8rem; /* Reduzir o tamanho dos ícones em telas menores */
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 10px; /* Empilhar os links úteis em telas menores */
+    }
+
     footer p {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Reduzir o tamanho da fonte do texto */
     }
 }
+
