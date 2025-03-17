@@ -51,7 +51,7 @@ nav ul {
 header {
     background-color: #1a237e;
     color: white;
-    padding: 150px 20px;
+    padding: 140px 20px;
     text-align: center;
     position: relative;
 }
@@ -85,13 +85,9 @@ header p {
     font-weight: 600;
     border-radius: 50px;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: 0.3s;
 }
 .cta-btn:hover {
     background-color: #e0a700;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-    transform: scale(1.05);
 }
 /* Ajustar os botões em telas menores */
 @media (max-width: 768px) {
@@ -121,6 +117,7 @@ header p {
 .about h2 {
     font-size: 2.8rem;
     font-weight: 600;
+    margin-top: -40px;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
@@ -236,31 +233,65 @@ header p {
         padding: 20px; /* Menos padding */
     }
 }
-/* Mais cursos */
-.more-courses {
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
     text-align: center;
-    margin-bottom: 15px; 
-    /* margin-top: 5px; */
+    margin-top: 50px;
 }
-.more-courses p {
-    font-size: 1.2rem;
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
     color: #333;
-    margin-bottom: 15px; /* Espaço entre o texto e o botão */
+    margin-bottom: 40px;
+    letter-spacing: 1px;
 }
-.more-courses .cta-btn {
-    display: inline-block; /* Faz com que o botão fique abaixo do texto */
-    background-color: #1a237e;
-    color: white;
-    padding: 12px 25px;
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    margin-top: 10px; /* Espaçamento acima do botão */
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
-/* .more-courses .cta-btn:hover {
-    background-color: #ffcc00;
-} */
+
+.testimonial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-icon {
+    font-size: 60px;
+    color: #4CAF50;  /* Cor verde para destaque */
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-content strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
 /* Seção de informações sobre preços e datas */
 .pricing-info {
     background-color: #ffcc00;
@@ -282,43 +313,108 @@ header p {
 }
 /* Formulário de inscrição */
 .form-container {
-    padding: 60px 20px;
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
-    background-color: #1a237e;
-    color: #fff;
-    position: relative;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #ffcc00;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
+
 .form-container h4 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
     font-weight: 600;
 }
-.form-container input, .form-container button {
-    padding: 15px;
+
+.form-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     font-size: 1rem;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    border: none;
-    margin: 10px 0;
-}
-.form-container input {
-    background-color: #fff;
     color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
 }
-.form-container button {
-    background-color: #ffcc00;
-    color: white;
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+.input-group input::placeholder,
+.input-group select {
+    color: #888;
+}
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    transition: background-color 0.3s ease; /* Transição suave para a cor */
+    width: 100%;
 }
-.form-container button:hover {
-    background-color: #e0a700;
-    transform: scale(1.05);
+
+.cta-btn:hover {
+    background-color: #45a049; /* Leve mudança de cor no hover */
 }
+
+.cta-btn:focus {
+    outline: none;
+}
+
+/* Mensagem do forms */
+/* Estilo para a mensagem de sucesso */
+#successMessage {
+    display: none; /* Inicialmente escondido */
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Slide-in efeito */
+#successMessage.slideIn {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Slide-out efeito */
+#successMessage.slideOut {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+
 /* Estilo para a seção de Localização */
 .location {
     padding: 80px 20px;
@@ -380,7 +476,6 @@ header p {
         right: 30px;
     }
 }  
-/* Rodapé */
 /* Rodapé */
 footer {
     background: #333;
