@@ -9,7 +9,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
 </head>
 <body>
     <nav>
@@ -170,49 +169,20 @@
     </div>
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script>
-    document.getElementById("signupForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        // Desativa a restauração automática de rolagem
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
+    $(document).ready(function(){
+    var behavior = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    options = {
+        onKeyPress: function(val, e, field, options) {
+        field.mask(behavior.apply({}, arguments), options);
         }
+    };
 
-        // Exibe o loader
-        const loader = document.getElementById("pageLoader");
-        loader.style.display = "flex";
-
-        // Marca que o formulário foi enviado
-        localStorage.setItem("formSubmitted", "true");
-
-        // Aguarda brevemente para o usuário ver o loader, então recarrega
-        setTimeout(function() {
-            location.reload();
-        }, 1000); // você pode ajustar esse tempo
-    });
-
-    window.addEventListener("load", function() {
-        const formSubmitted = localStorage.getItem("formSubmitted");
-
-        if (formSubmitted === "true") {
-            // Força rolar para o topo
-            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-
-            // Mostra a mensagem de sucesso
-            const successMessage = document.getElementById("successMessage");
-            successMessage.style.display = "block";
-            successMessage.classList.add("slideIn");
-
-            // Limpa flag
-            localStorage.removeItem("formSubmitted");
-
-            // Esconde após 5s (opcional)
-            setTimeout(() => {
-                successMessage.classList.remove("slideIn");
-                successMessage.classList.add("slideOut");
-            }, 5000);
-        }
+    $('input[name="phone"]').mask(behavior, options);
     });
 </script>
 
@@ -225,13 +195,43 @@
   document.getElementById("signupForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
+    // Desativa restauração automática de rolagem
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const loader = document.getElementById("pageLoader");
+    loader.style.display = "flex";
+
+    // Envia o formulário com EmailJS
     emailjs
       .sendForm('service_56fkw6n', 'template_sae4aw7', this)
       .then(function () {
         console.log("Mensagem enviada com sucesso!");
+
+        // Limpa o formulário
+        document.getElementById("signupForm").reset();
+
+        // Esconde o loader
+        loader.style.display = "none";
+
+        // Mostra a mensagem de sucesso
+        const successMessage = document.getElementById("successMessage");
+        successMessage.style.display = "block";
+        successMessage.classList.add("slideIn");
+
+        // Esconde depois de 5 segundos
+        setTimeout(() => {
+          successMessage.classList.remove("slideIn");
+          successMessage.classList.add("slideOut");
+        }, 5000);
+
       }, function (error) {
-        console.log("Falha ao enviar a mensagem: " + JSON.stringify(error));
+        console.log("Erro ao enviar:", error);
+        loader.style.display = "none";
+        alert("Houve um erro ao enviar o formulário. Tente novamente.");
       });
   });
 </script>
+
 </html>
