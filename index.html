@@ -163,31 +163,56 @@
         <p>&copy; 2025 Academia Musical Asafe. Todos os direitos reservados.</p>
         <p>Contate-nos: orquestraecoraladb34@gmail.com</p>
     </footer>
+    
+    <div id="pageLoader" class="page-loader">
+        <div class="spinner"></div>
+        <p>Carregando...</p>
+    </div>
 </body>
+
 <script>
     document.getElementById("signupForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Impede o envio normal do formulário
+        event.preventDefault();
 
-        // Exibe a mensagem de sucesso com animação de slide-in
-        let successMessage = document.getElementById("successMessage");
-        successMessage.style.display = "block";  // Torna visível
-        successMessage.classList.add("slideIn"); // Aplica a animação de entrada
+        // Desativa a restauração automática de rolagem
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
 
-        // Oculta o formulário após envio
-        // document.getElementById("signupForm").reset();
+        // Exibe o loader
+        const loader = document.getElementById("pageLoader");
+        loader.style.display = "flex";
 
-        // Espera 7 segundos, depois inicia o slide-up e recarrega a página
+        // Marca que o formulário foi enviado
+        localStorage.setItem("formSubmitted", "true");
+
+        // Aguarda brevemente para o usuário ver o loader, então recarrega
         setTimeout(function() {
-            successMessage.classList.remove("slideIn"); // Remove a animação de entrada
-            successMessage.classList.add("slideOut"); // Aplica a animação de saída
+            location.reload();
+        }, 1000); // você pode ajustar esse tempo
+    });
 
-            // Após a animação de slide-up, recarrega a página
-            setTimeout(function() {
-                location.reload(); // Recarrega a página
-            }, 500); // Espera 0.5 segundos para garantir que o slide-out foi concluído
-        }, 7000); // Espera 7 segundos
+    window.addEventListener("load", function() {
+        const formSubmitted = localStorage.getItem("formSubmitted");
+
+        if (formSubmitted === "true") {
+            // Força rolar para o topo
+            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
+            // Mostra a mensagem de sucesso
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+            successMessage.classList.add("slideIn");
+
+            // Limpa flag
+            localStorage.removeItem("formSubmitted");
+
+            // Esconde após 5s (opcional)
+            setTimeout(() => {
+                successMessage.classList.remove("slideIn");
+                successMessage.classList.add("slideOut");
+            }, 5000);
+        }
     });
 </script>
-
-
 </html>
