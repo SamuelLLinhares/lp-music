@@ -216,26 +216,4 @@
     });
 </script>
 
-<script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
-<script>
-  emailjs.init('NHtkMrJDwa9EgGpvtBoT3'); // substitua pelo seu User ID
-
-  const form = document.getElementById('signupForm');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm('musicClass', 'template_sae4aw7', this)
-      .then(() => {
-        alert('Inscrição enviada com sucesso! Você receberá um contato em breve.');
-        // Limpa o form (opcional)
-        form.reset();
-
-        // Aqui pode mostrar sua mensagem de sucesso personalizada no DOM, se quiser
-      }, (error) => {
-        alert('Erro ao enviar o formulário. Tente novamente.');
-        console.error('EmailJS error:', error);
-      });
-  });
-</script>
-
 </html>
