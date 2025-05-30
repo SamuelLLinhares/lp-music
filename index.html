@@ -6,10 +6,10 @@
     <meta name="description" content="Aulas de música online na Academia Musical Asafe. Aprenda a tocar instrumentos como violão, guitarra, piano e canto com os melhores professores!">
     <title>Aula de Música Online - Inscreva-se Agora!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -18,6 +18,7 @@
             <!-- <li><a href="#sobre">Sobre</a></li> -->
             <li><a href="#cursos">Cursos</a></li>
             <li><a href="#precos">Preços</a></li>
+            <li><a href="#calendario">Calendario</a></li>
             <li><a href="#inscrever">Inscreva-se</a></li>
         </ul>
     </nav>
@@ -42,7 +43,6 @@
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vrOCg74wMrA?si=G6oF-5TPlB_3x527&amp;controls=0&amp;start=20" title="Orquestra da Igreja - Cantata" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
-    
     <section class="courses" id="cursos">
         <div class="course-card">
             <img src="shared/images/lp/cordas.webp" alt="Curso de Cordas Friccionadas">
@@ -90,7 +90,6 @@
         </div>
     </section>
     
-
     <section class="pricing-info" id="precos">
         <h3>Informações sobre Preços e Datas</h3>
         <div class="info">
@@ -115,6 +114,14 @@
         </div>
     </section>    
     
+    <section class="class-calendar" id="calendario">
+        <h2>Calendário de Aulas - 2º Semestre</h2>
+        <p>Veja as aulas por mês. Clique no mês para expandir as datas e os conteúdos.</p>
+        <div id="calendarWrapper"></div>
+        <div class="lessons-list" id="${monthId}"></div>
+    </section>
+
+
     <section id="inscrever" class="form-container">
         <h4>Inscreva-se Hoje!</h4>
         <p>Preencha os dados abaixo para garantir sua vaga nas nossas aulas de música.</p>
@@ -145,10 +152,7 @@
             <p>Obrigado por se inscrever!<br> Entraremos em contato em breve.</p>
         </div>
     </section>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <a href="https://api.whatsapp.com/send?phone=5511975155138" class="whats-btn" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a>
-
     <footer>
         <div class="social-icons">
             <a href="https://facebook.com/seu-perfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -169,84 +173,16 @@
         <p>Carregando...</p>
     </div>
 </body>
+<!-- Bibliotecas -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script>
-    $(document).ready(function(){
-    var behavior = function (val) {
-        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-    },
-    options = {
-        onKeyPress: function(val, e, field, options) {
-        field.mask(behavior.apply({}, arguments), options);
-        }
-    };
-
-    $('input[name="phone"]').mask(behavior, options);
-    });
-</script>
-<script>
-    document.getElementById("signupForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        // Desativa a restauração automática de rolagem
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-
-        // Exibe o loader
-        const loader = document.getElementById("pageLoader");
-        loader.style.display = "flex";
-
-        // Marca que o formulário foi enviado
-        localStorage.setItem("formSubmitted", "true");
-
-        // Aguarda brevemente para o usuário ver o loader, então recarrega
-        setTimeout(function() {
-            location.reload();
-        }, 1000); // você pode ajustar esse tempo
-    });
-
-    window.addEventListener("load", function() {
-        const formSubmitted = localStorage.getItem("formSubmitted");
-
-        if (formSubmitted === "true") {
-            // Força rolar para o topo
-            window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-
-            // Mostra a mensagem de sucesso
-            const successMessage = document.getElementById("successMessage");
-            successMessage.style.display = "block";
-            successMessage.classList.add("slideIn");
-
-            // Limpa flag
-            localStorage.removeItem("formSubmitted");
-
-            // Esconde após 5s (opcional)
-            setTimeout(() => {
-                successMessage.classList.remove("slideIn");
-                successMessage.classList.add("slideOut");
-            }, 5000);
-        }
-    });
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function () {
-    emailjs.init("qJwtfkjml0PyNdLOg");
-  })();
 
-  document.getElementById("signupForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+<!-- Scripts personalizados -->
+<script src="assets/js/phone-mask.js"></script>
+<script src="assets/js/form-handler.js"></script>
+<script src="assets/js/form-success.js"></script>
+<script src="assets/js/emailjs-init.js"></script>
+<script src="assets/js/calendar.js"></script>
 
-    emailjs
-      .sendForm('service_56fkw6n', 'template_sae4aw7', this)
-      .then(function () {
-        console.log("Mensagem enviada com sucesso!");
-      }, function (error) {
-        console.log("Falha ao enviar a mensagem: " + JSON.stringify(error));
-      });
-  });
-</script>
 </html>
