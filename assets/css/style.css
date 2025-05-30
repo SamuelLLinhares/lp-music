@@ -728,7 +728,13 @@ footer .social-icons a:hover {
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     position: relative;
     animation: fadeInUp 1s ease forwards;
-    opacity: 0;
+    opacity: 0;    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-step:hover { 
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-step .circle {
@@ -756,11 +762,9 @@ footer .social-icons a:hover {
 
 @keyframes fadeInUp {
     0% {
-        transform: translateY(30px);
         opacity: 0;
     }
     100% {
-        transform: translateY(0px);
         opacity: 1;
     }
 }
