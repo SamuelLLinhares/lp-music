@@ -1,0 +1,641 @@
+   /* Reset básico */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    overflow-x: hidden;
+}
+/* Navbar fixa */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a237e;
+    color: white;
+    padding: 15px 0;
+    z-index: 1000; /* Fixa a navbar no topo */
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 20px;
+}
+nav ul li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap; /* Adicionando flex-wrap para quebrar os itens quando necessário */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 140px 20px;
+    text-align: center;
+    position: relative;
+}
+header h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px) {
+    header {
+        padding: 80px 20px;
+    }
+    header h1 {
+        font-size: 3rem; /* Reduzindo o tamanho da fonte */
+    }
+    header p {
+        font-size: 1.2rem; /* Font menor em telas pequenas */
+    }
+}
+.cta-btn {
+    background-color: #ffcc00;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+}
+.cta-btn:hover {
+    background-color: #e0a700;
+}
+/* Ajustar os botões em telas menores */
+@media (max-width: 768px) {
+    .cta-btn {
+        padding: 12px 30px; /* Menor padding nos botões */
+        font-size: 1rem; /* Fonte menor */
+    }
+
+    .form-container input, .form-container button {
+        width: 90%; /* Input e botão mais largos em dispositivos móveis */
+    }
+
+    .form-container h4 {
+        font-size: 2rem; /* Fonte do título menor */
+    }
+}
+/* Seção sobre a aula */
+.about {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
+    z-index: 1;
+    position: relative;
+}
+.about h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.about img {
+    max-width: 100%;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2.2rem;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+}
+ /* Estilo do container de vídeos */
+.video-container {
+    text-align: center;
+    padding: 80px 20px;
+    background: #1a237e; /* Cor de fundo */
+    color: white;
+    animation: fadeIn 3s ease-out;
+}
+.video-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.video-container p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Estilo dos iframes (vídeos) */
+.video-container iframe {
+    width: 35%;
+    height: 315px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+    .video-container iframe {
+        width: 90%; /* Tornar os vídeos mais largos em telas pequenas */
+        height: 200px; /* Ajustar a altura para não ocupar muito espaço */
+    }
+}
+
+/* Cards de cursos */
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+}
+.course-card {
+    background: #fff;
+    width: 320px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+.course-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.course-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.course-card p {
+    font-size: 1.1rem;
+    color: #777;
+    margin: 20px 0;
+}
+.course-card .cta-btn {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+/* Ajustes para os cards de cursos */
+@media (max-width: 768px) {
+    .courses {
+        flex-direction: column; /* Empilhar os cards verticalmente em telas pequenas */
+        gap: 20px; /* Menor espaço entre os cards */
+    }
+    .course-card {
+        width: 90%; /* Cards mais estreitos em telas menores */
+        padding: 20px; /* Menos padding */
+    }
+}
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-icon {
+    font-size: 60px;
+    color: #4CAF50;  /* Cor verde para destaque */
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-content strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Seção de informações sobre preços e datas */
+.pricing-info {
+    background-color: #ffcc00;
+    padding: 60px 20px;
+    text-align: center;
+}
+.pricing-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.pricing-info .info {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+.info.discount ul{
+    list-style-type: none;            
+}
+/* Formulário de inscrição */
+.form-container {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.form-container h4 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+.input-group input::placeholder,
+.input-group select {
+    color: #888;
+}
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave para a cor */
+    width: 100%;
+}
+
+.cta-btn:hover {
+    background-color: #45a049; /* Leve mudança de cor no hover */
+}
+
+.cta-btn:focus {
+    outline: none;
+}
+
+/* Mensagem do forms */
+/* Estilo para a mensagem de sucesso */
+#successMessage {
+    display: none; /* Inicialmente escondido */
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Slide-in efeito */
+#successMessage.slideIn {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Slide-out efeito */
+#successMessage.slideOut {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+
+/* Estilo para a seção de Localização */
+.location {
+    padding: 80px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    margin-top: 40px;
+}
+.location h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+.location p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .location h2 {
+        font-size: 2rem;
+    }
+    .location p {
+        font-size: 1rem;
+    }
+    .map-container iframe {
+        width: 100%; /* A largura do mapa fica 100% em dispositivos móveis */
+    }
+}
+.map-container {
+    margin-top: 30px;
+}
+.map-container iframe {
+    border-radius: 10px;
+}
+.whats-btn {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index:1000;
+}
+.whatsapp-btn:hover {
+    transform: scale(1.1); 
+}
+@media (max-width: 768px) {
+    .whats-btn {
+        width: 50px; /* Tornar o botão menor */
+        height: 50px;
+        font-size: 24px; /* Fonte menor */
+        bottom: 30px; /* Ajustar a posição */
+        right: 30px;
+    }
+}  
+/* Rodapé */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 5px solid #ffcc00; /* Linha para destacar o rodapé */
+    position: relative;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #ccc; /* Cor mais suave para o texto */
+}
+
+/* Links úteis */
+footer .footer-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+footer .footer-links a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #ffcc00; /* Destacar links úteis ao passar o mouse */
+    transform: translateY(-3px); /* Leve animação de movimento */
+}
+
+/* Ícones sociais */
+footer .social-icons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    font-size: 2rem; /* Aumentar tamanho dos ícones */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #ffcc00; /* Destacar ícones sociais ao passar o mouse */
+    transform: scale(1.2); /* Aumentar o ícone ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer .social-icons a {
+        font-size: 1.8rem; /* Reduzir o tamanho dos ícones em telas menores */
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 10px; /* Empilhar os links úteis em telas menores */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Reduzir o tamanho da fonte do texto */
+    }
+}
+
+/* Reload */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* fundo escuro translúcido */
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.page-loader .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #00d1b2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Calendar */
+.class-calendar {
+    background: linear-gradient(180deg, #e8f0ff 0%, #f5f8ff 100%);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid #d0dcff;
+    border-bottom: 2px solid #d0dcff;
+}
+
+.class-calendar h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.month-card {
+    background-color: #ffffff;
+    border-left: 6px solid #3f51b5;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.month-card:hover {
+    background-color: #f0f4ff;
+}
+
+.month-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.lessons-list {
+    display: none;
+    padding: 10px 20px;
+    background-color: #fdfdfd;
+    border-left: 3px solid #ccc;
+    margin-top: 10px;
+    border-radius: 0 0 8px 8px;
+}
+
+.lesson-item {
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.lesson-item .date {
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.final {
+    color: #e91e63;
+    font-weight: bold;
+}
