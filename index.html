@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aulas de música online na Academia Musical Asafe. Aprenda a tocar instrumentos como violão, guitarra, piano e canto com os melhores professores!">
-    <title>Aula de Música Online - Inscreva-se Agora!</title>
+    <meta name="description" content="Aulas de música na Escola de Música Exemplo. Aprenda a tocar instrumentos como violão, guitarra, piano e canto com os melhores professores!">
+    <title>Aula de Música - Inscreva-se Agora!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -19,14 +19,31 @@
             <li><a href="#inscrever">Inscreva-se</a></li>
         </ul>
     </nav>
+    <div class="project-dropdown-container">
+        <button id="projectToggleBtn" class="project-dropdown-btn">☰ Projetos</button>
+        <div class="project-dropdown-menu" id="projectDropdown">
+            <h1>Escola de Música (EM)</h1>
+            <p>Sistema de Escola de Música com autenticação, gerenciamento de alunos, matérias e professores.</p>
+            <p><strong>Tecnologias:</strong> PHP (MVC), MySQL, HTML/CSS</p>
+
+            <div class="demo-access-info">
+                <p><em>Acesso de demonstração:</em></p>
+                <p><small><strong>Email:</strong> admin@ama.com</small></p>
+                <p><small><strong>Senha:</strong> Senha123</small></p>
+            </div>
+
+            <a class="cta-btn" href="https://music-class.infinityfree.me/" target="_blank">Acessar Sistema</a>
+        </div>
+    </div>
+
     <!-- Cabeçalho -->
     <header>
-        <h1>Academia Musical Asafe (AMA)</h1>
+        <h1><span class="school-name">Escola de Música Exemplo (EM)</span></h1>
         <p>Aprenda com os melhores professores em aulas presenciais, vivenciando uma experiência musical única!</p>
         <a href="#inscrever" class="cta-btn">Inscreva-se Agora</a>
     </header>
     <section class="why-choose">
-        <h2>Por que escolher a AMA?</h2>
+        <h2>Por que escolher a EM?</h2>
         <div class="features">
             <div class="feature-item">
                 <i class="fas fa-chalkboard-teacher"></i>
@@ -78,7 +95,7 @@
         </div>
     </section>
     <section class="timeline-section">
-        <h2>Sua Jornada Musical na AMA</h2>
+        <h2>Sua Jornada Musical na EM</h2>
         <div class="timeline">
             <div class="timeline-step">
                 <div class="circle">1</div>
@@ -118,7 +135,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-content">
-                    <p>"Aprender a tocar piano online com os professores da Academia Musical Asafe foi uma experiência transformadora!"</p>
+                    <p>"Aprender a tocar piano com os professores da Escola de Música Exemplo foi uma experiência transformadora!"</p>
                     <strong>- Maria Oliveira, aluna de Piano</strong>
                 </div>
             </div>
@@ -150,7 +167,7 @@
         </div>
         <div class="info">
             <strong>Local das Aulas:</strong> 
-            <p>As aulas presenciais acontecem na nossa sede, localizada na <strong>Rua Boturoca, 165, Vila Indiana, Butantã, São Paulo (SP)</strong>.</p>
+            <p>As aulas presenciais acontecem na nossa escola, localizada na <strong>Rua Exemplo, 123, Bairro Musical, Cidade, Estado</strong>.</p>
         </div>
     </section>    
     <section class="class-calendar" id="calendario">
@@ -189,7 +206,7 @@
             <p>Obrigado por se inscrever!<br> Entraremos em contato em breve.</p>
         </div>
     </section>
-    <a href="https://api.whatsapp.com/send?phone=5511975155138" class="whats-btn" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=5511000000000" class="whats-btn" target="_blank"><i style="margin-top:16px" class="fa fa-whatsapp"></i></a>
     <footer>
         <div class="social-icons">
             <a href="https://facebook.com/seu-perfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -201,8 +218,8 @@
             <a href="#terms-of-service">Termos de Uso</a>
             <a href="#contact">Contato</a>
         </div>
-        <p>&copy; 2025 Academia Musical Asafe. Todos os direitos reservados.</p>
-        <p>Contate-nos: orquestraecoraladb34@gmail.com</p>
+        <p>&copy; 2025 Escola de Música Exemplo. Todos os direitos reservados.</p>
+        <p>Contate-nos: contato@escolademusicaexemplo.com</p>
     </footer>
     <div id="pageLoader" class="page-loader">
         <div class="spinner"></div>
@@ -219,4 +236,20 @@
 <script src="assets/js/form-success.js"></script>
 <script src="assets/js/emailjs-init.js"></script>
 <script src="assets/js/calendar.js"></script>
+
+<script>
+  const toggleBtn = document.getElementById('projectToggleBtn');
+  const dropdown = document.getElementById('projectDropdown');
+
+  toggleBtn.addEventListener('click', () => {
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Fecha o dropdown se clicar fora
+  document.addEventListener('click', function (event) {
+    if (!toggleBtn.contains(event.target) && !dropdown.contains(event.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
+</script>
 </html>

@@ -776,3 +776,78 @@ footer .social-icons a:hover {
     }
 }
 
+.project-dropdown-container {
+  position: fixed;
+  top: 90px;
+  right: 30px;
+  z-index: 1500;
+}
+
+.project-dropdown-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.project-dropdown-btn:hover {
+  background-color: #5ccf60;
+}
+
+.project-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.project-dropdown-menu h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #1a237e;
+}
+
+.project-dropdown-menu p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-dropdown-menu .cta-btn {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+}
+/* Ajustes para o botão "☰ Projetos" em mobile */
+@media (max-width: 768px) {
+  .project-dropdown-container {
+    top: 48px !important; /* sobe o botão no mobile */
+    right: 10px !important;
+  }
+}
+
+.demo-access-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-left: 3px solid #ccc;
+    font-size: 0.85em;
+    color: #333;
+}
+.demo-access-info em {
+    font-weight: 500;
+}
