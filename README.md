@@ -18,7 +18,7 @@ Site institucional para divulgação e inscrição em aulas presenciais de músi
 
 ## Tecnologias Utilizadas
 
-- HTML5, CSS3 e JavaScript  
+- HTML, CSS e JavaScript  
 - FontAwesome para ícones  
 - jQuery para manipulação DOM e máscaras de telefone  
 - EmailJS para envio de formulários  
@@ -38,6 +38,7 @@ Site institucional para divulgação e inscrição em aulas presenciais de músi
 
 4. Configure o EmailJS (ou outro serviço) para receber inscrições.
 
+---
 
 ## Estrutura de pastas
 ├── assets/
@@ -46,13 +47,3 @@ Site institucional para divulgação e inscrição em aulas presenciais de músi
 │   └── images/
 ├── index.html
 └── README.md
-
-
-## Contato
-Para dúvidas ou contribuições, entre em contato:
-
-Email: seuemail@exemplo.com
-
-GitHub: github.com/seu-usuario
-
-LinkedIn: linkedin.com/in/seu-perfil
